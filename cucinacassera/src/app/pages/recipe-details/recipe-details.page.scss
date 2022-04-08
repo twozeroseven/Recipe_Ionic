@@ -1,0 +1,36 @@
+.tags {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.tags div { 
+    margin: 10px;
+    padding: 5px;
+    background-color: yellow;
+    border-radius: 8px;
+    color: black;
+    font-size: 0.75em;
+}
+
+
+.ing {
+    display: flex;
+    align-content: space-around;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.ing-item { 
+    --ion-item-background: rgb(48, 48, 48);
+}
+
+.head {
+    --ion-item-background: #55555e;
+    --ion-item-color: white;
+}
+
+.ing span { 
+    margin-left: 10px;
+    color: grey;
+}

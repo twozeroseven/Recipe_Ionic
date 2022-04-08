@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-text color="primary">
+      <h2>{{recipe.title}}</h2>
+      <ion-note>Last Updated: {{recipe.updatedAt}}</ion-note>
+    </ion-text>
+  </ion-item>
+  <ion-item>
+    <div class="tags">
+      <div *ngFor="let tag of recipe.tags">
+        {{tag}}
+      </div>
+    </div>
+  </ion-item>
+
+  <ion-item class="ing-item" *ngFor="let ing of recipe.ings" [ngClass]="{'head': ing.isHead}">
+    <div class="ing">
+      <div>{{ing.value}}<span>{{ing.notes}}</span></div>
+      <div (click)="switchAmt($event, ing.amount)">{{ing.amount}}</div>
+    </div>
+  </ion-item>
+  
+  <ion-item>
+    <div class="descr">
+      {{recipe.descr}}
+    </div>
+  </ion-item>
+</ion-content>

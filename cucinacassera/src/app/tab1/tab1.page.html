@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ionic Search Filter Demo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+  <ion-list>
+    <div *ngFor="let recipe of recipes | filter:filterTerm" class="recipeListContainer" routerLink="/recipe-details" [state]="{recipe: recipe}" routerDirection="forward">
+        <div class="sub">
+          <div class="title">{{recipe.title}}</div>
+          <div class="rating">{{recipe.rating}}</div>
+        </div>
+        <div class="sub">
+        <div class="updated">{{recipe.updatedAt}}</div>
+        <div class="sample">sample</div>
+        </div>
+      </div>
+    </ion-list>
+</ion-content>
